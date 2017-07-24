@@ -19,9 +19,13 @@ build:
   detect_binary_files_with_prefix: true
 
 requirements:
-  build:
+  host:
     - expat
+
+  build:
     - python
+    - {{ compiler('c') }}
+
   run:
     - expat
 
