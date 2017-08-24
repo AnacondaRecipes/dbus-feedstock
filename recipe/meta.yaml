@@ -21,6 +21,7 @@ build:
 requirements:
   host:
     - expat
+    - glib >=2.53,<3.0a0
 
   build:
     - python
@@ -28,6 +29,7 @@ requirements:
 
   run:
     - expat
+    - glib >=2.53,<3.0a0
 
 test:
   commands:
