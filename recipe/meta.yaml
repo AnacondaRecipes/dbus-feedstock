@@ -1,4 +1,4 @@
-{% set version = "1.10.22" %}
+{% set version = "1.11.16" %}
 {% set sha256 = "e2b1401e3eedc7b5c9a2034d31254c886e1fcbc7858006e0a1c59158fe4b7b97" %}
 
 package:
@@ -17,19 +17,20 @@ build:
   skip: true  # [win]
   number: 0
   detect_binary_files_with_prefix: true
+  run_exports:
+    # Has maintained compatibility basically forever.
+    #    https://abi-laboratory.pro/tracker/timeline/dbus/
+    - {{ pin_subpackage('dbus', max_pin='x') }}
 
 requirements:
-  host:
-    - expat
-    - glib >=2.53,<3.0a0
-
   build:
-    - python
     - {{ compiler('c') }}
-
+    - python
+  host:
+    - glib
+    - expat
   run:
     - expat
-    - glib >=2.53,<3.0a0
 
 test:
   commands:
