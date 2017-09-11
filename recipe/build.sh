@@ -1,8 +1,8 @@
 #!/bin/bash
 
-if [[ ${HOST} =~ .*darwin.* ]]; then
-  WITHOUT_X=--without-x
-fi
+# if [[ ${HOST} =~ .*darwin.* ]]; then
+WITHOUT_X=--without-x
+# fi
 
 CPPFLAGS="${CPPFLAGS} -I${PREFIX}/include" \
 LDFLAGS="${LDFLAGS} -L${PREFIX}/lib -Wl,-rpath,${PREFIX}/lib"  \
