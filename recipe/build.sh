@@ -17,7 +17,3 @@ if [[ $(uname) != Darwin ]]; then
   make check
 fi
 make install
-
-if [[ ${HOST} =~ .*darwin.* ]]; then
-  cp ${RECIPE_DIR}/post-link.sh.Darwin "${PREFIX}/bin/.dbus-post-link.sh"
-fi
