@@ -1,5 +1,5 @@
-{% set version = "1.12.2" %}
-{% set sha256 = "272bb5091770b047c8188b926d5e6038fa4fe6745488b2add96b23e2d9a83d88" %}
+{% set version = "1.13.2" %}
+{% set sha256 = "945deb349a7e2999184827c17351c1bf93c6395b9c3ade0c91cad42cb93435b1" %}
 
 package:
   name: dbus
@@ -12,10 +12,11 @@ source:
     - 0001-Add-var-lib-dbus-machine-id-as-a-fallback.patch  # [linux]
     - 0002-Make-it-possible-to-read-files-on-proc-which-reports.patch  # [linux]
     - 0003-Use-proc-sys-kernel-random-boot_id-as-last-resort-fa.patch  # [linux]
+    - 0004-disable-fd-limit-tests-not-supported-in-docker.patch        # [linux]
 
 build:
   skip: true  # [win]
-  number: 1
+  number: 0
   run_exports:
     # Has maintained compatibility basically forever.
     #    https://abi-laboratory.pro/tracker/timeline/dbus/
