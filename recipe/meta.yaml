@@ -16,7 +16,7 @@ source:
 
 build:
   skip: true  # [win]
-  number: 0
+  number: 1
   run_exports:
     # Has maintained compatibility basically forever.
     #    https://abi-laboratory.pro/tracker/timeline/dbus/
