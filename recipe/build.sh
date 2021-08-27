@@ -1,5 +1,7 @@
 #!/bin/bash
 
+cp -r ${BUILD_PREFIX}/share/libtool/build-aux/config.* ./build-aux
+
 rm -f ${PREFIX}/lib/*.la
 
 CPPFLAGS="${CPPFLAGS} -I${PREFIX}/include" \

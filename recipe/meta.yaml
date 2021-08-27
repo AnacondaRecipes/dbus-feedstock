@@ -26,6 +26,7 @@ requirements:
     - {{ compiler('c') }}
     - pkg-config
     - make
+    - libtool
   host:
     - glib
     - expat
