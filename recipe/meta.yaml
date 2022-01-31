@@ -27,6 +27,7 @@ requirements:
     - pkg-config
     - make
     - libtool
+    - patch  # [linux]
   host:
     - glib
     - expat
