@@ -1,4 +1,4 @@
-{% set version = "1.13.18" %}
+{% set version = "1.13.22" %}
 
 package:
   name: dbus
@@ -6,7 +6,7 @@ package:
 
 source:
   url: http://dbus.freedesktop.org/releases/dbus/dbus-{{ version }}.tar.xz
-  sha256: 8078f5c25e34ab907ce06905d969dc8ef0ccbec367e1e1707c7ecf8460f4254e
+  sha256: fbe79fa621ccc01317032bd0d6a31542df429b5c293e075620e2c00fbf2e9c17
   patches:
     - patches/0001-Add-var-lib-dbus-machine-id-as-a-fallback.patch  # [linux]
     - patches/0002-Make-it-possible-to-read-files-on-proc-which-reports.patch  # [linux]
