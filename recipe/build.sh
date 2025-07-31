@@ -1,20 +1,19 @@
 #!/bin/bash
+set -euo pipefail
 
-cp -r ${BUILD_PREFIX}/share/libtool/build-aux/config.* ./build-aux
+meson setup build \
+  ${MESON_ARGS:-} \
+  --prefix="${PREFIX}" \
+  -Dlibdir=$PREFIX/lib \
+  --includedir=${PREFIX}/include \
+  --wrap-mode=nodownload \
+  -Dsystemd=disabled \
+  -Dselinux=disabled \
+  -Dxml_docs=disabled \
+  -Dlaunchd_agent_dir="${PREFIX}"
 
-rm -f ${PREFIX}/lib/*.la
-
-CPPFLAGS="${CPPFLAGS} -I${PREFIX}/include" \
-LDFLAGS="${LDFLAGS} -L${PREFIX}/lib -Wl,-rpath,${PREFIX}/lib"  \
-  ./configure --prefix=${PREFIX}   \
-              --disable-systemd    \
-              --disable-selinux    \
-              --disable-xml-docs   \
-              --with-launchd-agent-dir=${PREFIX}  \
-              --without-x
-
-make -j${CPU_COUNT} ${VERBOSE_AT}
-if [[ $(uname) != Darwin ]]; then
-  make check
+meson compile -C build
+if [[ "${target_platform}" != osx-* ]]; then
+   meson test -C build --print-errorlogs
 fi
-make install
+meson install -C build
