@@ -2,7 +2,7 @@
 set -euo pipefail
 
 meson setup build \
-  ${MESON_ARGS} \
+  ${MESON_ARGS:-} \
   --wrap-mode=nodownload \
   -Dsystemd=disabled \
   -Dselinux=disabled \
