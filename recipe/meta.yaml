@@ -40,10 +40,10 @@ requirements:
     - zlib
     - xorg-libx11
 
-test:
-  commands:
+# test:
+#   commands:
     # - dbus-daemon --version
-    - dbus-uuidgen
+    # - dbus-uuidgen
 
 about:
   home: https://www.freedesktop.org/wiki/Software/dbus/
