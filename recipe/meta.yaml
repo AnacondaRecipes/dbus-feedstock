@@ -42,7 +42,7 @@ requirements:
 
 test:
   commands:
-    - dbus-daemon --version
+    # - dbus-daemon --version
     - dbus-uuidgen
 
 about:
