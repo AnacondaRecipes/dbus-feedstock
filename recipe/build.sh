@@ -4,6 +4,8 @@ set -euo pipefail
 meson setup build \
   ${MESON_ARGS:-} \
   --prefix="${PREFIX}" \
+  -Dlibdir=$PREFIX/lib \
+  --includedir=${PREFIX}/include \
   --wrap-mode=nodownload \
   -Dsystemd=disabled \
   -Dselinux=disabled \

@@ -15,8 +15,6 @@ source:
 build:
   skip: true  # [win]
   number: 0
-  missing_dso_whitelist:   # [linux]
-    - "**/libdbus-1.so.*"  # [linux]
   run_exports:
     # Has maintained compatibility basically forever.
     #    https://abi-laboratory.pro/tracker/timeline/dbus/
@@ -30,9 +28,9 @@ requirements:
     - pkg-config
     - meson >=0.56
   host:
-    - glib
-    - expat
-    - zlib
+    - glib {{ glib }}
+    - expat {{ expat }}
+    - zlib {{ zlib }}
     - xorg-libx11 {{ xorg_libx11 }}
   run:
     - glib
@@ -42,8 +40,8 @@ requirements:
 
 test:
   commands:
-    - dbus-daemon --version # [not linux]
-    - dbus-uuidgen # [not linux]
+    - dbus-daemon --version
+    - dbus-uuidgen
 
 about:
   home: https://www.freedesktop.org/wiki/Software/dbus/
