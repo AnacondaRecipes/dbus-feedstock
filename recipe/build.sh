@@ -3,6 +3,7 @@ set -euo pipefail
 
 meson setup build \
   ${MESON_ARGS:-} \
+  --prefix="${PREFIX}" \
   --wrap-mode=nodownload \
   -Dsystemd=disabled \
   -Dselinux=disabled \

@@ -24,8 +24,9 @@ requirements:
   build:
     - {{ compiler('c') }}
     - {{ compiler('cxx') }}
+    - {{ stdlib('c') }}
     - pkg-config
-    - meson
+    - meson >=0.56
     - patch  # [linux]
   host:
     - glib
