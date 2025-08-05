@@ -24,7 +24,6 @@ requirements:
   build:
     - {{ compiler('c') }}
     - {{ compiler('cxx') }}
-    - {{ stdlib('c') }}
     - pkg-config
     - meson >=0.56
     - patch  # [linux]
@@ -32,10 +31,12 @@ requirements:
     - glib
     - expat
     - zlib
+    - xorg-libx11 {{ xorg_libx11 }}
   run:
     - glib
     - expat
     - zlib
+    - xorg-libx11 {{ xorg_libx11 }}
 
 test:
   commands:
