@@ -31,12 +31,10 @@ requirements:
     - glib {{ glib }}
     - expat {{ expat }}
     - zlib {{ zlib }}
-    - xorg-libx11 {{ xorg_libx11 }}
   run:
     - glib
     - expat
     - zlib
-    - xorg-libx11
 
 test:
   commands:
