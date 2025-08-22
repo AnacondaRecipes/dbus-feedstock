@@ -20,7 +20,7 @@ build:
     #    https://abi-laboratory.pro/tracker/timeline/dbus/
     - {{ pin_subpackage('dbus') }}
   ignore_run_exports:
-    - glib # libglib is only needed for test binaries.
+    - libglib # libglib is only needed for test binaries.
 
 requirements:
   build:
